@@ -9,12 +9,17 @@ export interface GatewayConfig {
 
 export interface AgentConfig {
   model: string;
+  /** Workspace root for prompts and tool cwd. Default ~/.emergent-mind/workspace */
+  workspace?: string;
 }
 
 export interface Config {
   gateway: GatewayConfig;
   agent: AgentConfig;
 }
+
+const CONFIG_DIR = process.env.EMERGENT_MIND_CONFIG_DIR ?? join(homedir(), ".emergent-mind");
+const DEFAULT_WORKSPACE = join(CONFIG_DIR, "workspace");
 
 const DEFAULT_CONFIG: Config = {
   gateway: {
@@ -23,10 +28,10 @@ const DEFAULT_CONFIG: Config = {
   },
   agent: {
     model: process.env.OPENAI_MODEL ?? "gpt-4o-mini",
+    workspace: DEFAULT_WORKSPACE,
   },
 };
 
-const CONFIG_DIR = process.env.EMERGENT_MIND_CONFIG_DIR ?? join(homedir(), ".emergent-mind");
 const CONFIG_PATH = process.env.EMERGENT_MIND_CONFIG ?? join(CONFIG_DIR, "config.json");
 
 export function loadConfig(): Config {

@@ -8,7 +8,7 @@ import { getSessionHistory, appendToSession } from "./sessions.js";
 export function startGateway(): void {
   const config = loadConfig();
   const { port, bind } = config.gateway;
-  const model = config.agent.model;
+  const { model, workspace: workspaceRoot } = config.agent;
 
   const httpServer = createServer((req, res) => {
     if (req.url === "/health" && req.method === "GET") {
@@ -54,6 +54,7 @@ export function startGateway(): void {
           runAgent(message, {
             history,
             model,
+            workspaceRoot: workspaceRoot ?? undefined,
             onChunk: (chunk) => sendEvent({ chunk }),
           })
             .then((content) => {

@@ -9,7 +9,9 @@ An AI agent that actually does things: takes requests, reasons with an LLM, and 
 - **Personal agent** that runs on your machine and uses your tools.
 - **Single control plane** — a long-lived gateway process. CLI, WebChat, and future channels connect to it; one agent serves all.
 - **Sessions** — the agent keeps conversation context per session (default: `main`).
-- **Brain + hands** — an LLM for reasoning and a fixed set of tools for action (run shell, read file).
+- **Brain + hands** — an LLM for reasoning and tools: run shell, read file, write file.
+- **Workspace** — optional workspace root with `AGENTS.md`, `TOOLS.md`, and `skills/*/SKILL.md` to shape the agent.
+- **Sessions** are persisted to disk so context survives gateway restarts.
 
 ---
 
@@ -41,10 +43,11 @@ npm install
 npm run build
 ```
 
-**2. Set your API key**
+**2. Set your API key** (OpenAI or Anthropic)
 
 ```bash
 export OPENAI_API_KEY=sk-...
+# Or for Anthropic: export ANTHROPIC_API_KEY=sk-ant-...
 ```
 
 **3. Run the gateway** (in one terminal)
@@ -96,12 +99,16 @@ Example:
     "bind": "127.0.0.1"
   },
   "agent": {
-    "model": "gpt-4o-mini"
+    "model": "gpt-4o-mini",
+    "workspace": "~/.emergent-mind/workspace"
   }
 }
 ```
 
-Environment: `OPENAI_API_KEY` (required), `OPENAI_MODEL` (default `gpt-4o-mini`).
+- **model** — Use `gpt-4o-mini`, `gpt-4o`, or any OpenAI model. For Anthropic use the `anthropic/` prefix, e.g. `anthropic/claude-3-5-sonnet-20241022`.
+- **workspace** — Directory for agent identity and skills. If present, the agent loads system prompt from `AGENTS.md`, optional `TOOLS.md`, and any `skills/<name>/SKILL.md`. Tool paths (read_file, write_file, run_shell cwd) are relative to this directory. Default: `~/.emergent-mind/workspace`.
+
+Environment: `OPENAI_API_KEY` (for OpenAI models), `ANTHROPIC_API_KEY` (for Anthropic models). `OPENAI_MODEL` overrides config model.
 
 ---
 
@@ -111,7 +118,8 @@ Environment: `OPENAI_API_KEY` (required), `OPENAI_MODEL` (default `gpt-4o-mini`)
   - `gateway/` — Control plane: WebSocket server, sessions, protocol, WebChat HTML, in-process and client helpers
   - `agent/` — Agent loop: LLM calls, tool execution
   - `channels/` — Channel helpers (CLI input)
-  - `tools/` — Tool definitions and runner (run_shell, read_file)
+  - `tools/` — Tool definitions and runner (run_shell, read_file, write_file)
+  - `workspace/` — Load workspace prompts (AGENTS.md, TOOLS.md, skills)
   - `config.ts` — Load config from file and env
   - `cli.ts` — CLI entry (gateway, agent, message)
 - `dist/` — Build output (`npm run build`)
@@ -122,8 +130,11 @@ Environment: `OPENAI_API_KEY` (required), `OPENAI_MODEL` (default `gpt-4o-mini`)
 
 - [x] **Gateway daemon** — WebSocket server, sessions, health, WebChat
 - [x] **CLI** — gateway, agent, message send; fallback in-process
-- [ ] **Memory** — Persistent context across restarts (e.g. recall/summarize)
-- [ ] **More tools** — Write file, browser, custom skills
+- [x] **Workspace** — AGENTS.md, TOOLS.md, skills/*/SKILL.md; tool cwd
+- [x] **Session persistence** — Sessions saved to disk under `~/.emergent-mind/sessions/`
+- [x] **Multi-provider** — OpenAI and Anthropic (model prefix `anthropic/`)
+- [x] **write_file** tool
+- [ ] **More tools** — Browser, custom skills
 - [ ] **More channels** — Optional integrations (e.g. messaging, voice)
 
 ---

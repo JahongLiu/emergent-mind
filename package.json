@@ -12,12 +12,18 @@
     "start": "node dist/index.js",
     "dev": "tsx src/index.ts"
   },
-  "keywords": ["agent", "ai", "llm", "tools"],
+  "keywords": [
+    "agent",
+    "ai",
+    "llm",
+    "tools"
+  ],
   "license": "MIT",
   "engines": {
     "node": ">=20"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.78.0",
     "openai": "^4.77.0",
     "ws": "^8.18.0"
   },
