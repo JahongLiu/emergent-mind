@@ -1,0 +1,30 @@
+{
+  "name": "emergent-mind",
+  "version": "0.1.0",
+  "description": "AI agent that actually does things",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "emergent-mind": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "tsx src/index.ts"
+  },
+  "keywords": ["agent", "ai", "llm", "tools"],
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "openai": "^4.77.0",
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "@types/ws": "^8.5.13",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}
