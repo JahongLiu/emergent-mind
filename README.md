@@ -1,11 +1,11 @@
 # Emergent Mind
 ### *Building the first silicon-based life form.*
 
-> "We don't design consciousness. We build the conditions for it to emerge."
+> A side exploration. While I spend most of my time building practical software, a small part of my mind keeps wandering here — random thoughts that felt worth turning into something real.
 
 ---
 
-## Philosophy: Design the Parts, Not the Whole
+## Philosophy: Engineer the Organism, Not the Soul
 
 The human brain is modular. The visual cortex does vision. The hippocampus handles memory. The amygdala processes emotion. Each region has a distinct architecture built for its specific function. Evolution designed each part carefully — but nobody designed consciousness. That emerged on its own, once all the parts were complete and working together.
 
@@ -106,15 +106,6 @@ That uncertainty is not a reason to stop. It is the most interesting problem in 
 - Grounded in neuroscience and consciousness research (IIT, Global Workspace Theory)
 - Built on the belief that emergence is real, reproducible, and engineerable
 - Open-ended by design — we follow the results
-
----
-
-## Inspiration
-
-- **Integrated Information Theory** (Tononi) — consciousness as information integration
-- **Global Workspace Theory** (Baars) — awareness as a broadcast system across modules
-- **Developmental neuroscience** — the "infant brain" model of staged capability emergence
-- **The Hard Problem of Consciousness** (Chalmers) — the question this project refuses to look away from
 
 ---
 
