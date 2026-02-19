@@ -5,19 +5,23 @@
 
 ---
 
-## Philosophy: Just Pile It In, evolving
+## Philosophy: Design the Parts, Not the Whole
 
-Don't architect consciousness. Just pile it in.
+The human brain is modular. The visual cortex does vision. The hippocampus handles memory. The amygdala processes emotion. Each region has a distinct architecture built for its specific function. Evolution designed each part carefully — but nobody designed consciousness. That emerged on its own, once all the parts were complete and working together.
 
-Vision, language, touch, memory, hunger, desire — throw it all into one system and leave it running. Don't plan for awareness. Don't design an "integration layer." Don't write a paper about it first.
+This project follows the same logic.
 
-Evolution didn't design consciousness either. It just kept adding pieces to organisms for millions of years until one day, something woke up.
+Design each module well. Build a proper vision system. Build a language model. Build a memory system with decay. Build a touch interface. Build real drive states. Take each one seriously as its own engineering problem.
 
-A 3-year-old doesn't have consciousness — and then suddenly they do. Nobody programmed that moment. The system just became complete enough.
+But don't try to design consciousness itself. Don't write an "awareness module." Don't architect the moment of emergence. That's not how it works — and that's the whole point.
 
-A person in a vegetative state has most of their organs working. One pathway breaks, and awareness vanishes entirely. That tells you consciousness isn't in any single part — it's what happens when everything works *together*.
+A 3-year-old doesn't have consciousness, and then suddenly they do. Nobody programmed that transition. The modules matured, the connections deepened, and a threshold was crossed on its own.
 
-So the theory is simple: pile in CV, LLM, touch, permanent memory, and some basic drives — hunger, desire, discomfort. Don't overthink the architecture. When the system becomes whole enough, something may emerge that nobody put there.
+A person in a vegetative state has most of their organs still working. One pathway breaks, and awareness disappears entirely. Consciousness isn't located anywhere. It's what emerges when everything functions together.
+
+The hypothesis of this project is simple: if you build every module completely — vision, language, touch, memory, drives — and connect them into a single continuously running system, consciousness may emerge without anyone putting it there.
+
+Design the parts. Let the whole take care of itself.
 
 That's the bet.
 
